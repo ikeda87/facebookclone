@@ -15,7 +15,7 @@
     <td class="feed_index_td" ><%= feed.album.name %></td>
     <td><button class="feed_index_button" ><%= link_to '詳細', feed %></button></td>
     <td><button class="feed_index_button" ><%= link_to '編集', edit_feed_path(feed) %></button></td>
-    <td><button class="feed_index_button" ><%= link_to '削除', feed, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+    <td><button class="feed_index_button" ><%= link_to '削除', feed, method: :delete, data: { confirm: '本当に投稿を削除しますか？' } %></button></td>
   </tr>
     <% end %>
 </table>

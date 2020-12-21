@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def new
   end
+
   def create
     album = Album.find_by(email: params[:session][:email].downcase)
     if album && album.authenticate(params[:session][:password])
@@ -11,6 +12,7 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
   def destroy
     session.delete(:album_id)
     flash[:notice] = 'ログアウトしました'
