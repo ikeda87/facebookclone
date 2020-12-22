@@ -1,19 +1,18 @@
-<h1 class="feed_show_h1">投稿の詳細</h1>
+<br><br><br><h1 class="feed_show_h1">投稿の詳細</h1>
 <p id="notice"><%= notice %></p>
 
 <table class="feed_show_table">
-  <tr>
-    <th class="feed_show_th">投稿画像</th>
-    <th class="feed_show_th">投稿内容</th>
+    <tr align="justify" valign="middle">
     <th class="feed_show_th">投稿者</th>
+    <th class="feed_show_th">投稿内容</th>
+    <th class="feed_show_th">投稿画像</th>
   </tr>
   <tr>
-    <td class="feed_show_td" ><%= image_tag @feed.image.url %></td>
-    <td class="feed_show_td" ><%= @feed.content %></td>
     <td class="feed_show_td" ><%= @feed.album.name %></td>
+    <td class="feed_show_td" ><%= @feed.content %></td>
+    <td class="feed_show_td" ><%= @feed.image.url %></td>
   </tr>
 </table>
-
 <div class="feed_show_bottun">
   <button><%= link_to '編集', edit_feed_path(@feed) %></button>
   <button><%= link_to '一覧', feeds_path %></button>
