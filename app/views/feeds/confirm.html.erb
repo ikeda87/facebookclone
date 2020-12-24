@@ -1,4 +1,4 @@
-<br><br><br><h1>確認画面</h1>
+<br><br><h1>確認画面</h1><br>
 <%= form_with(model: @feed, local: true) do |form| %>
 　　<%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
 　　<%= form.hidden_field :image_cache %>
