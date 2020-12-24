@@ -7,7 +7,7 @@ header {
   height: 100px;
   width: 100%;
   bottom: 0;
-  position: relative;
+  position: absolute; top:0px;
   background-color: #305098;
 }
 
