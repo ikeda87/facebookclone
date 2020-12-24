@@ -3,6 +3,7 @@
   margin-right: auto;
   margin-top: 30px;
 }
+
 .profile_th {
   border: 2px solid;
   padding-left: 2px;
@@ -13,8 +14,8 @@
 .table_header {
   text-align: center;
 }
+
 .profile_button {
   text-align: center;
   margin-top: 30px;
-
 }

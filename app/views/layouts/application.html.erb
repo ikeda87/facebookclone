@@ -14,14 +14,17 @@
           <%= content_tag(:div, value, class: "#{key}") %>
         　<% end %>
         　<% if logged_in? %>
-          <button class="application_button"><%= link_to "ユーザーログアウト", session_path(current_album.id), method: :delete %></button>
           <button class="application_button"><%= link_to "プロフィール", album_path(current_album.id) %></button>
+          <button class="application_button"><%= link_to "ユーザーログアウト", session_path(current_album.id), method: :delete %></button>
         　<% else %>
-          <button class="application_button"><%= link_to "ユーザーログイン", new_session_path %></button>
           <button class="application_button"><%= link_to "サインアップ", new_album_path %></button>
+          <button class="application_button"><%= link_to "ユーザーログイン", new_session_path %></button>
+          <% end %>
+          <%= yield %>
       </div>
     </header>
-    <% end %>
-    <%= yield %>
 　　</body>
+<footer>
+  <p>©Facebook clone</p>
+</footer>
 </html>
