@@ -19,10 +19,8 @@ class FeedsController < ApplicationController
     respond_to do |format|
       if @feed.save
         format.html { redirect_to @feed, notice: '正常に行われました' }
-        format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,10 +40,10 @@ class FeedsController < ApplicationController
     respond_to do |format|
       if @feed.update(feed_params)
         format.html { redirect_to @feed, notice: 'アップデートされました' }
-        format.json { render :show, status: :ok, location: @feed }
+
       else
         format.html { render :edit }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -54,7 +52,7 @@ class FeedsController < ApplicationController
     @feed.destroy
     respond_to do |format|
       format.html { redirect_to feeds_url, notice: '正しく削除されました' }
-      format.json { head :no_content }
+
     end
   end
 

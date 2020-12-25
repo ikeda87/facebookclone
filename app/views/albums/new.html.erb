@@ -2,7 +2,7 @@
 <br><br><h1>ユーザー登録</h1><br>
 <% if @album.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@album.errors.count, "error") %> prohibited this <%= @album.name %> from being saved:</h2>
+    <h2><%= pluralize(@album.errors.count, "error") %> <%= @album.name %> エラーが発生しました:</h2>
     <ul>
     <% @album.errors.full_messages.each do |message| %>
       <li><%= message %></li>
