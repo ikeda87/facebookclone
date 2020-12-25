@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy,]
-
+ # pictureの投稿・投稿確認・編集・一覧表示・詳細画面・削除機能があること（CRUD機能）
   def index
     @feeds = Feed.all
   end
@@ -15,7 +15,6 @@ class FeedsController < ApplicationController
 
   def create
     @feed = current_album.feeds.build(feed_params)
-
     respond_to do |format|
       if @feed.save
         format.html { redirect_to @feed, notice: '正常に行われました' }
@@ -40,10 +39,8 @@ class FeedsController < ApplicationController
     respond_to do |format|
       if @feed.update(feed_params)
         format.html { redirect_to @feed, notice: 'アップデートされました' }
-
       else
         format.html { render :edit }
-
       end
     end
   end
@@ -52,7 +49,6 @@ class FeedsController < ApplicationController
     @feed.destroy
     respond_to do |format|
       format.html { redirect_to feeds_url, notice: '正しく削除されました' }
-
     end
   end
 

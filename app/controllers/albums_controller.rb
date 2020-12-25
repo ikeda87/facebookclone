@@ -2,6 +2,7 @@ class AlbumsController < ApplicationController
   def new
     @album = Album.new
   end
+
   def create
     @album = Album.new(album_params)
     if @album.save
@@ -10,9 +11,11 @@ class AlbumsController < ApplicationController
       render :new
     end
   end
+
   def show
     @album = Album.find(params[:id])
   end
+
   private
   def album_params
     params.require(:album).permit(:name, :email, :password, :password_confirmation)
