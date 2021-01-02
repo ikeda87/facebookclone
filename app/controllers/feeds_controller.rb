@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy,]
- # pictureの投稿・投稿確認・編集・一覧表示・詳細画面・削除機能があること（CRUD機能）
+
   def index
     @feeds = Feed.all
   end
