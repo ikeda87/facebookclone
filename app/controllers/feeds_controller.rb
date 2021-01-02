@@ -14,14 +14,14 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = current_album.feeds.build(feed_params)
-    respond_to do |format|
-      if @feed.save
-        format.html { redirect_to @feed, notice: '正常に行われました' }
-      else
-        format.html { render :new }
-      end
+  @feed = current_album.feeds.build(feed_params)
+  respond_to do |format|
+    if @feed.save
+      format.html { redirect_to @feed, notice: '正しく行われました' }
+    else
+      format.html { render :new }
     end
+   end
   end
 
   def show

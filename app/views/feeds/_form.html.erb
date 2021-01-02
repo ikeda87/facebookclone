@@ -13,21 +13,17 @@
   <div class="field">
     <p class="feed_form_posted">
     <%= (form.label :image, "現在の画像：") if @feed.image && @feed.image.url %>
-      <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
-    </p>
+      <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %></p>
     <p class="feed_form_posted">
       <%= (form.label :content, "現在の内容：") if @feed.content %>
-        <%= @feed.content %>
-    </p>
-    <h3 class="feed_form_h3">新しい投稿内容</h3>
-    <p class="feed_form_posting">
+        <%= @feed.content %></p>
+    <h3 class="feed_form_h3">新規投稿:画像とコメントをお願いします。</h3>
+    <div class="feed_form_posting">
       <%= form.file_field :image %>
       <%= form.hidden_field :image_cache %>
-    </p>
     <p class="feed_form_posting">
-      <%= form.label :content, "内容" %>
-      <%= form.text_field :content %>
-    </p>
+      <%= form.label :content, "投稿内容:" %>
+      <%= form.text_field :content %></p>
     <p><%= form.submit %></p>
     <% end %>
   </div>
