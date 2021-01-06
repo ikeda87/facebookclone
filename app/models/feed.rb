@@ -1,5 +1,5 @@
 class Feed < ApplicationRecord
   mount_uploader :image, ImageUploader
-  belongs_to :Album
+  belongs_to :album
   validates :content, presence: true
 end

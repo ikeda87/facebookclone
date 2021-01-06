@@ -7,7 +7,6 @@
   </tr>
     <% @feeds.each do |feed| %>
   <tr>
-    <td class="feed_index_td" ><%= feed.album.name %></td>
     <td class="feed_index_td" ><%= feed.content %></td>
     <td class="feed_index_td" ><%= image_tag(feed.image.url) if feed.image.url %></td>
     <td><button class="feed_index_button" ><%= link_to '詳細', feed %></button></td>
