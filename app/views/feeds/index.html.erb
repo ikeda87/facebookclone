@@ -1,4 +1,4 @@
-<br><br><h1 class="feed_index_h1">投稿内容一覧</h1><br>
+<br><br><br><h1 class="feed_index_h1">投稿内容一覧</h1><br>
 <table class="feed_index_table">
     <tr>
     <th class="feed_index_th">投稿者</th>
@@ -7,6 +7,7 @@
   </tr>
     <% @feeds.each do |feed| %>
   <tr>
+    <td class="feed_index_td" ><%= feed.album.name %></td>
     <td class="feed_index_td" ><%= feed.content %></td>
     <td class="feed_index_td" ><%= image_tag(feed.image.url) if feed.image.url %></td>
     <td><button class="feed_index_button" ><%= link_to '詳細', feed %></button></td>
@@ -14,5 +15,6 @@
     <td><button class="feed_index_button" ><%= link_to '削除', feed, method: :delete, data: { confirm: '本当に削除しますか？' } %></button></td>
   </tr>
     <% end %>
-</table>
+</table><br>
 <button class= "feed_index_button2" ><%= link_to '投稿する', new_feed_path %></button>
+<br><br><br><button><%= link_to '一覧へ戻る', feeds_path %></button>
